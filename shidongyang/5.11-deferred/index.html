@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src="js/common/jquery.js"></script>
+<script type="text/javascript" src="js/common/angular.js"></script>
+<script type="text/javascript">
+	var publicArr=[]; 
+	var wait=function(json,state){
+		var deffer=$.Deferred()
+			$.ajax(json).then(function(msg){	
+				if(state){
+					deffer.resolve(msg)
+				}else{
+					deffer.reject(state)
+				}
+			})
+		return deffer.promise()
+	}
+	var fun1=wait("data/json.json","ok")
+	var fun2=wait("data/build.json","err")
+	fun1.then(function(data){
+		publicArr.push(data.arr);
+		return fun2;
+	}).then(function(data){
+		publicArr.push(data.str);
+		console.log(publicArr)
+	})
+</script>
+</body>
+</html>
