@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>点击上下排序</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			margin: 50px auto;
+		}
+		ol li{
+			border-bottom: 1px solid #ccc;
+		}
+		li{
+			line-height: 28px;
+			list-style: none;
+		}
+		li{
+			text-align: center;
+			display: -webkit-flex;
+		}
+		li span{
+			-webkit-flex: 1
+		}
+	</style>
+</head>
+<body ng-app="myapp">
+<div ng-controller="ft" class="box">
+	<div><input type="text" ng-model="search"/><button>search</button></div>
+	<ol>
+		<li>
+			<span ng-click='change("price")'>价格</span>
+			<span ng-click='change("brand")'>品牌</span>
+			<span ng-click='change("rmb")'>人民币</span>
+		</li>
+	</ol>
+	<ul>
+		<li ng-repeat='item in DATA | filter:search | orderBy:order+type'>
+			<span>{{item.price}}</span>
+			<span>{{item.brand}}</span>
+			<span>{{item.rmb}}</span>
+		</li>
+	</ul>
+</div>
+<script src="js/common/angular.js"></script>
+<script src="js/common/jquery.js"></script>
+<script type="text/javascript">
+	var app=angular.module('myapp',[])
+	app.service('data',function(){
+		return [
+				{
+					price:"4658",
+					brand:"iphone4",
+					rmb:"￥5620"
+				},
+				{
+					price:"6532",
+					brand:"iphone5",
+					rmb:"￥8650"
+				},
+				{
+					price:"5682",
+					brand:"iphone6",
+					rmb:"￥7462"
+				}
+			]
+	})
+	app.controller('ft',function($scope,data){
+		$scope.DATA=data;
+		$scope.search="";
+		$scope.type="";
+		$scope.order="-";
+		$scope.change=function(i){
+			$scope.type=i;
+			if($scope.order==""){
+				$scope.order="-"
+			}else{
+				$scope.order=""
+			}
+		}
+	})
+</script>
+</body>
+</html>
