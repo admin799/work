@@ -120,31 +120,32 @@ app.controller("ft",function($scope,alldata,getpage,$filter,$stateParams){
 //	$scope.filt='';
 	//删除
    	$scope.del=function(dele){
-   		
-   		$scope.datas=alldata.thirdata;
-   		$scope.datas.forEach(function(val,key){
-   			if(val.ID==dele){
-   				$scope.datas.splice(key,1)
-   			}
-   		})
-        var indexPage;
-        $scope.datas.forEach(function (i,index) {
-            switch (i.ID){
-                case dele:{
-                    indexPage= Math.ceil(index/$scope.maxLength)
+        $scope.datas=alldata.thirdata;
+        $scope.popupSH=true
+        //确定的执行方法
+        $scope.okFn=function () {
+            //通过过滤后的数据找当前显示页
+            var indexPage;
+            $scope.datas.forEach(function (i,val) {
+                switch (i.ID){
+                    case dele.ID:{
+                        indexPage= Math.ceil(val/$scope.maxLength)
+                    }
                 }
-            }
-        })
-        $scope.datas.forEach(function (i,index) {
-            switch (i.ID){
-                case dele:{
-                    $scope.datas.splice(index,1)
-                }
-            }
-        })
-		alldata.thirdata=$scope.datas
-        $scope.pagedata(indexPage)
-		getpage($scope);
+            })
+	   		$scope.datas.forEach(function(val,key){
+	   			if(val.ID==dele){
+	   				$scope.datas.splice(key,1)
+	   			}
+			})
+            $scope.pagedata(indexPage)
+            $scope.popupSH=false
+			getpage($scope);
+		}
+        //取消的执行方法
+	    $scope.noFn=function () {
+	        $scope.popupSH=false
+	    }
 
    	}
 	//编辑

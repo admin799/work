@@ -8,3 +8,13 @@ app.directive('headers',function(){
 		}
 	}
 })
+app.directive("confirm",function () {
+    return {
+        restrict:"ECMA",
+        replace:true,
+        templateUrl:"page/del/dele.html",
+        controller:function ($scope,alldata) {
+
+        }
+    }
+})
