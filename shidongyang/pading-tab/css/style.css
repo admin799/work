@@ -1,0 +1,189 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body,.wrapper{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.wrapper{
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+}
+header{
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	background: darkturquoise;
+	display: -webkit-flex;
+	color: #fff;
+}
+header p{
+	width: 22%;
+	border-right: 1px solid #CCCCCC;
+	text-align: center;
+	box-sizing: border-box;
+}
+header ul{
+	display: -webkit-flex;
+}
+header ul li{
+	list-style: none;
+	padding-left: 20px;	
+	cursor: pointer;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+}
+.left{
+	width: 22%;
+	height: 100%;
+	text-align: center;
+	line-height: 30px;
+	border-right: 1px solid #D4D4D4;
+	box-sizing: border-box;
+	line-height: 40px;
+}
+.col a{
+	color: #000;
+}
+.left dt{
+	border-bottom: 1px solid #D4D4D4;
+}
+.bg-span{
+	background: darkturquoise;
+	color: #fff;
+	position: relative;
+}
+.bg-span em{
+	width: 3px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	background: orange;
+}
+.right{
+	width: 78%;
+	height: 100%;
+}
+.right p{
+	line-height: 30px;
+}
+.right p span{
+	padding-left: 20px;
+	padding-right: 10px;
+}
+.right>div{
+	margin-left: 20px;
+}
+.user{
+	padding: 10px 10px 10px 0 ;
+	border-bottom: 1px solid #D4D4D4;
+}
+.user span{
+	padding-bottom: 10px;
+	border-bottom: 3px solid orange;
+}
+.right-search{
+	display: -webkit-flex;
+}
+.right-search p{
+	margin-right: 10px;
+}
+.right-list>p{
+	background: #F5F5F5;
+	color: #269ABC;
+	padding-left: 5px;
+	border-bottom: 1px solid #D5D5D5;
+}
+table{
+	width: 100%;
+	text-align: center;
+}
+table tr{
+	height: 40px;
+}
+.trbor{
+	border-bottom: 1px solid #000;
+}
+.right-add {
+	line-height: 30px;
+	display: -webkit-flex;
+}
+.right-add i,em{
+	font-style: normal;
+}
+.right-add i{
+	margin-left: 8px;
+	margin-right: 8px;
+	cursor: pointer;
+}
+.right-add span{
+	display: inline-block;
+	width: 28px;
+	border:1px solid #000;
+	text-align: center;
+	margin: 2px;
+	cursor: pointer;
+}
+.right-add p{
+	display: inline-block;
+}
+.right-add p input{
+	width: 50px;	
+}
+.right-add .ili{
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	padding: 1px 5px;
+}
+.span-col span{
+	background: deeppink;
+	color: #fff;
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+.div-show{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 1px solid #000;
+	border-radius: 15px;
+}
+.div-show li,.add li{
+	line-height: 45px;
+	list-style: none;
+}
+.div-show li span,.add li span{
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.div-show button,.add button{
+	width: 80px;
+	height: 30px;
+	margin: 10px 35px;
+}
+.add,.div-show{
+	padding: 20px;
+	width: 300px;
+	height: 415px;
+	background: #FBFBFB;
+}
+.add{
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+.bg{
+	background: darkturquoise;
+	color: #fff;
+}

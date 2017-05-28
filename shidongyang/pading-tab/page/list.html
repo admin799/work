@@ -1,0 +1,89 @@
+<div class="right-list">
+	<div class="right-search">
+		<p>角色 
+			<select name="" id="admin">
+				<option value="">全部</option>
+				<option value="管理员">管理员</option>
+				<option value="用户">用户</option>
+			</select>
+		</p>
+		<p>状态 
+			<select name="" id="states">
+				<option value="">全部</option>
+				<option value="禁用">禁用</option>
+				<option value="启用">启用</option>
+			</select>
+		</p>
+		<p>
+			登录名：<input type="text" class="sear"/><button class="search-btn" ng-click="search()">查询</button>
+		</p>
+	</div>
+	<p>列表</p>
+	<table>
+		<thead>
+			<tr ng-repeat="item in allse" class="trbor">
+				<td>{{item.id}}</td>
+				<td>{{item.login}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.role}}</td>
+				<td>{{item.iphone}}</td>
+				<td>{{item.email}}</td>
+				<td>{{item.state}}</td>
+				<td>{{item.time}}</td>
+				<td>{{item.operation}}</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="i in cutData">
+				<td>{{i.ID}}</td>
+				<td>{{i.loginname}}</td>
+				<td>{{i.name}}</td>
+				<td>{{i.role}}</td>
+				<td>{{i.telephone}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.state}}</td>
+				<td>{{i.creattime}}</td>
+				<td class="col">
+                    <a href="#" class="revamp" ng-click="revamp(i.ID)">修改</a>
+                    <a href="#" class="del" ng-click="del(i.ID)">删除</a>
+                </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="right-add">	
+	<em>总共有<b ng-bind="len"></b>条数据</em>
+	<i ng-click="updown('-')">上一页</i>
+	<div class="ili">
+		<span ng-class="{bg:(index+1)==1}" ng-click="changeFun(1)">1</span>
+		<span ng-show="showup">...</span></li>
+		<span ng-repeat="i in arr" ng-show="showArr.indexOf(i)!=-1" ng-class="{bg:(index+1)==i}" ng-click="changeFun(i)">{{i}}</span>
+		<span ng-show="showdown">...</span>
+		<span ng-class="{bg:(index+1)==len}" ng-click="changeFun(len)" ng-show="showpage">{{len}}</span>
+	</div>
+		
+	<i ng-click="updown('+')" >下一页</i>
+	<p>第<input type="number" min="1" max="{{len}}" class="page" ng-change="changeInput()" ng-model="changeValue"/>页</p>
+</div>
+
+<div class="div-show" ng-show="show">
+	<ul>
+		<li><span>&nbsp;I&nbsp;D&nbsp;:</span><input type="text" value="{{amend.ID}}"/></li>
+		<li><span>登 录 名:</span><input type="text" value="{{amend.loginname}}" ng-model="amend.loginname"/></li>
+		<li><span>真是姓名:</span><input type="text" value="{{amend.name}}" ng-model="amend.name"/></li>
+		<li>
+			<span>角&nbsp;&nbsp;色:</span>
+			<!--<input type="text" ng-model="amend.role"/>-->
+			<select name="" ng-model="amend.role">
+				<option value="管理员">管理员</option>
+				<option value="用户">用户</option>
+			</select>
+		</li>
+		<li><span>手&nbsp;&nbsp;机:</span><input type="text" value="{{amend.telephone}}" ng-model="amend.telephone"/></li>
+		<li><span>邮&nbsp;&nbsp;箱:</span><input type="text" value="{{amend.email}}" ng-model="amend.email"/></li>
+		<li><span>状&nbsp;&nbsp;态:</span><label for="qi" class="lab"><input type="radio" id="qi" name="users" />启用</label><label for="jin" class="lab"><input type="radio" id="jin" name="users"/>禁用</label></li>
+		<li><span>创建时间:</span><input type="text" value="{{amend.creattime}}" ng-model="amend.creattime"/></li>
+		<li><button ng-click="sure()">确定</button><button ng-click="cancle()">取消</button></li>
+	</ul>
+</div>

@@ -1,0 +1,22 @@
+<div class="add">
+	<ul>
+		<form action="">
+			<!--<li><span>&nbsp;I&nbsp;D&nbsp;:</span><input type="text" value="{{amend.ID}}"/></li>-->
+			<li><span>登 录 名:</span><input type="text" ng-model="sureadd.loginname"/></li>
+			<li><span>真是姓名:</span><input type="text" ng-model="sureadd.name"/></li>
+			<li>
+				<span>角&nbsp;&nbsp;色:</span>
+				<select name="" ng-model="sureadd.role">
+					<option value="管理员">管理员</option>
+					<option value="用户">用户</option>
+				</select>
+			</li>
+			<li><span>手&nbsp;&nbsp;机:</span><input type="text" ng-model="sureadd.telephone"/></li>
+			<li><span>邮&nbsp;&nbsp;箱:</span><input type="text" ng-model="sureadd.email"/></li>
+			<li><span>状&nbsp;&nbsp;态:</span><label for="qi" class="lab"><input type="radio" id="qi" name="users" />启用</label><label for="jin" class="lab"><input type="radio" id="jin" name="users"/>禁用</label></li>
+			<!--<li><span>创建时间:</span><input type="text" value="{{today | date:"y-M-d H:m:s"}}" ng-model="sureadd.creattime"/></li>-->
+			<li><button ng-click="addsure()">确定</button></li>
+		</form>
+	</ul>
+</div>
+<!--<button ng-click="addcancle()" ui-sref="cancle">取消</button>-->

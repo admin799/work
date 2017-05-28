@@ -1,0 +1,20 @@
+<div class="left">
+	<dl>
+        <dt ng-click="statueConFn()" ng-binding>
+            {{parentName}}
+        </dt>
+        <dd ng-hide="statueCon">
+            <ul class="uil">
+                <li ng-repeat="i in data">
+                    <a ui-sref="{{i.route}}({id:i.id})">
+                        <em>{{i.name}}</em>
+                    </a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+<div class="right">
+	<div class="user"><span>用户信息</span></div>
+	<div ui-view></div>
+</div>

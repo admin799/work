@@ -1,0 +1,11 @@
+<div class="wrapper">
+	<header>
+		<p class="left-p">通用权限系统</p>
+		<ul>
+			<li ng-repeat="key in fstdata"><span ui-sref="{{key.route}}">{{key.name}}</span></li>
+		</ul>
+	</header>
+	<div class="content" ui-view>
+		
+	</div>
+</div>
