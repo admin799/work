@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myapp" ng-controller="ft">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/default.css" />
+		<link rel="stylesheet" href="../css/layout.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<headers></headers>
+			<div ui-view></div>
+		</div>
+	</body>
+	<script src="../js/common/angular.js"></script>
+	<script src="../js/common/angular-ui-router.js"></script>
+	<script src="../js/common/jquery.js"></script>
+	<script>
+	var app=angular.module('myapp',["ui.router"])
+	</script>
+	<script src="../js/data.js"></script>
+	<script src="../js/index.js"></script>
+	<script src="../js/service.js"></script>
+</html>

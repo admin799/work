@@ -1,0 +1,85 @@
+<section class="main page" id="sections">
+    <div class="fixed-bar">
+
+        <div class="item-title">
+            <span id="tile">角色管理</span>
+        </div>
+    </div>
+    <div class="fixed-empty"></div>
+
+    <div class="jiao">
+	<p>角色: 
+	 	<select name="" id="use">
+	 		<option value="">请选择</option>
+	 		<option value="启用">启用</option>
+	 		<option value="禁用">禁用</option>
+	 	</select>
+	状态:
+		<select name="" id="states">
+			<option value="">请选择</option>
+			<option value="管理员">管理员</option>
+			<option value="13管理员aaa">13管理员aaa</option>
+			<option value="13管理">13管理</option>
+		</select>
+    登录名: <input type="text" id="wei"><button class="search" ng-click="search()">查询</button></p>
+</div>
+    <table class="table tb-type2">
+        <thead>
+        <tr class="space">
+            <th colspan="15" class="nobg">列表</th>
+        </tr>
+        <tr class="thead">
+            <th>ID</th>
+            <th>登录名</th>
+            <th>真实姓名</th>
+            <th>身份</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th class="w300 align-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cutoutData">
+            <td>{{item.ID}}</td>
+            <td>{{item.loginname}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.role}}</td>
+            <td>{{item.telephone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.state}}</td>
+            <td>{{item.creattime}}</td>
+            <td class="w300 align-center">
+                <a class="edit" href="" ng-click="amend(item.ID)">修改</a> |
+                <a class="edit" href="" ng-click="remove(item.ID)">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btn">
+		    总共有 <span ng-bind="{{allPage}}"></span> 条数据
+		   <div class="fl marl50">
+            <span  class="anniu1" ng-click="updownFn('-')">上一页</span>
+            <span class="annius" ng-class="{back:(index+1)==1}" ng-click="changeIndexFn(1)">1</span>
+            <span class="annius" ng-show="showStatue1">...</span>
+            <span ng-repeat="i in pageArr" ng-show="showArr.indexOf(i)!=-1" class="annius" ng-class="{back:(index+1)==i}" ng-click="changeIndexFn(i)">{{i}}</span>
+            <span  class="annius" ng-show="showStatue2">...</span>
+            <span class="annius" ng-show="lastPage" ng-class="{back:(index+1)==allPage}" ng-click="changeIndexFn(allPage)">{{allPage}}</span>
+            <span  class="anniu1" ng-click="updownFn('+')">下一页</span>
+            第<input type="number" min="1" max="{{allPage}}" ng-change="changeInput()" ng-model="valueDATA" style="width:50px;"/>页
+	</div>
+    
+    
+<div class="cls" ng-show="bol">
+    <p><span>ID ：</span><input type="text" value="{{tar.ID}}"></p>
+    <p><span>登录名 ：</span><input type="text" value="{{tar.loginname}}" ng-model="tar.loginname"></p>
+    <p><span>真实姓名 ：</span><input type="text" value="{{tar.name}}" ng-model="tar.name"></p>
+    <p><span>角色 ：</span><input type="text" value="{{tar.role}}" ng-model="tar.role"></p>
+    <p><span>手机 ：</span><input type="text" value="{{tar.telephone}}" ng-model="tar.telephone"></p>
+    <p><span>邮箱 ：</span><input type="text" value="{{tar.email}}" ng-model="tar.email"></p>
+    <p class="lab"><span>状态 ：</span><input type="radio" value="启用" name="s" ng-model="tar.state" />启用<input type="radio" name="s" value="禁用" ng-model="tar.state">禁用</p>
+    <p><span>创建时间：</span> <input type="text" value="{{tar.creattime}}" ng-model="tar.creattime"></p>
+    <p><button ng-click="sure()">确定</button> <button ng-click="abolist()">取消</button></p>
+</div>
+</section>

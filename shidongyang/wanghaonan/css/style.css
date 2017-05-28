@@ -1,0 +1,182 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+.wrapper{
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	
+}
+.left{
+	width: 200px;
+	border-right: 1px solid #999;
+}
+.mine{
+	font-size: 16px;
+	line-height: 50px;
+	text-align: center;
+	box-shadow: 2px 0px 5px #999;
+}
+.quan{
+	font-size: 14px;
+	line-height: 35px;
+	text-align: center;
+	border-bottom: 1px solid #999;
+}
+
+.list{
+	width: 200px;
+	height: 105px;
+	float: left;
+}
+.list li{
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 14px;
+}
+.on{
+	background: lightblue;
+	caption-side: #fff;
+	border-right: 2px solid orangered;
+}
+.right{
+	-webkit-flex: 1;
+}
+.right h4{
+	width: 100%;
+	padding-left: 20px;
+	line-height: 50px;
+	font-weight: 400;
+	border-bottom: 1px solid #999;
+	margin-top: 20px;
+}
+.right h4 a{
+	padding-bottom: 16px;
+	box-sizing: border-box;
+	border-bottom: 2px solid orangered;
+}
+.nav{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: lightseagreen;
+	color: #fff;
+	display: -webkit-flex;
+}
+.nav ul{
+	height: 50px;
+	padding-left: 50px;
+}
+.nav li{
+	float: left;
+	padding-left: 10px;
+	font-size: 14px;
+	padding-right: 10px;
+}
+.nav h3{
+	width: 200px;
+	font-size: 16px;
+	color: #fff;
+	background: lightseagreen;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;	
+}
+.jiao{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	display: -webkit-flex;
+	padding-left: 20px;
+}
+.jiao p{
+	display: inline;
+}
+.jiao input{
+	margin-right: 10px;
+}
+.jiao button{
+	width: 40px;
+	
+}
+.lie{
+	margin-left: 20px;
+	background: #F2F2F2;
+	color: lightseagreen;
+	line-height: 30px;
+}
+.right ul,.right ol{
+	height: 30px;
+	margin-left: 20px;
+	display: -webkit-flex;
+}
+.right li{
+	-webkit-flex: 1;
+	line-height: 30px;
+}
+.fen{
+	width: 100%;
+	height: 30px;
+}
+.btn{
+	display: -webkit-flex;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+.btn a{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.right .list{
+	width: auto;
+}
+.cls{
+    width:350px;
+    height:350px;
+    position: absolute;
+    left:50%;
+    margin-left:-200px;
+    top:50%;
+    margin-top:-150px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.cls p{
+	margin-top: 10px;
+    padding-left:20px;
+}
+.fal{
+    margin-left: 10px;
+}
+.addList{
+	line-height: 30px;
+	margin-left: 200px;
+	margin-top: 50px;
+}
+.addbtn{
+	width: 50px;
+	height: 25px;
+}
+.b{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+}
+.live{
+	background: plum;
+	color: #fff;
+}
+.num{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+}
